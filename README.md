@@ -1,2 +1,2 @@
 # mamas-calculator
-Mama Thembi is unable to sell her vegetables at the market due to COVID19 restrictions. I'm helping her create an online spaza for mama where she can be able to sell to her community.
+ I am creating a calculator app that mama Thembi will use to do simple calculations at her spaza

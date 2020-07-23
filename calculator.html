@@ -1,70 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>calculator</title>
-  <style>
-    body{
-      background: lightslategrey;
-    }
-    *{
-      box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-    }
-    .wrap{
-      width: 400px;
-      margin: auto;
-      height: auto;
-      background: black;
-      padding: 25px;
-    }
-    input[type=text]{
-      width: 100%;
-      padding: 0px;
-      font-size: 22px;
-      font-weight: bold;
-      margin-top: 20px;
-      border-radius: 5px;
-    }
-    input[type=buttton]{
-      width: 89px;
-      padding: 0px;
-      font-size: 22px;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-    #del{
-      width: 100%;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="calculator.css">
+  <link href="https://fonts.googleapis.com/css? family=Open+sans:600,700" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cal</title>
 </head>
 <body>
-  <div class="wrap">
-    <form name="cal">
-      <input type="text" name="display">
-      <br><br>
-      <input type="button" value="9" onclick="cal.display.value+='9'">
-      <input type="button" value="8" onclick="cal.display.value+='8'">
-      <input type="button" value="7" onclick="cal.display.value+='7'">
-      <input type="button" value="+" onclick="cal.display.value+='+'">
-      <br><br>
-      <input type="button" value="6" onclick="cal.display.value+='6'">
-      <input type="button" value="5" onclick="cal.display.value+='5'">
-      <input type="button" value="4" onclick="cal.display.value+='4'">
-      <input type="button" value="-" onclick="cal.display.value+='-'">
-      <br><br>
-      <input type="button" value="3" onclick="cal.display.value+='3'">
-      <input type="button" value="2" onclick="cal.display.value+='2'">
-      <input type="button" value="1" onclick="cal.display.value+='1'">
-      <input type="button" value="*" onclick="cal.display.value+='*'">
-      <br><br>
-      <input type="button" value="0" onclick="cal.display.value+='0'">
-      <input type="button" value="/" onclick="cal.display.value+='/'">
-      <input type="button" value="%" onclick="cal.display.value+='%'">
-      <input type="button" value="=" onclick="cal.display.value =eval(cal.display.value)">
-      <br><br>
-      <input type="button" value="DELETE" onclick="cal.display.value= ''"id ="del">
-    </form>
+  <div id="container">
+    <div id="calculator">
+      <div id="result">
+        <div id="history">
+          <p id="history-value"></p>
   </div>
+  <div id="output">
+    <p id="output-value"></p>
+  </div>
+  </div>
+  <div id="keyboard">
+    <button class="operator"
+    id="clear">C</button>
+    <button class="operator"
+    id="backspace">CE</button>
+    <button class="operator" id="%">%</button>
+    <button class="operator" id="/">&#247;
+    </button>
+    <button class="number" id="7">7</button>
+    <button class="number" id="8">8</button>
+    <button class="number" id="9">9</button>
+    <button class="operator" id="*">&times;
+    </button>
+    <button class="number" id="4">4</button>
+    <button class="number" id="5">5</button>
+    <button class="number" id="6">6</button>
+    <button class="operator" id="-">-</button>
+    <button class="number" id="7">1</button>
+    <button class="number" id="7">2</button>
+    <button class="number" id="7">3</button>
+    <button class="operator" id="+">+</button>
+    <button class="empty" id="empty"></button>
+    <button class="number" id="0">0</button>
+    <button class="empty" id="empty"></button>
+    <button class="operator" id="=">=</button>
+  </div>
+  </div>
+  </div>
+  <script src="calculator.js"></script>
 </body>
 </html>

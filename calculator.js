@@ -2,14 +2,14 @@ function getHistory(){
     return document.getElementById("history-value").innerText
 }
 function printHistory(num){
-    document.getElementById("output-value").innerText=num;
+    document.getElementById("history-value").innerText=num;
 }
 function printOutput(){
     return document.getElementById("output-value").innerText;
 }
 function printOutput(num){
     if(num==""){
-    document.getElementById("output-value").innerText= getFormattedNumber (num);
+    document.getElementById("output-value").innerText=getFormattedNumber (num);
 }
 else{
     document.getElementById("output-value").innerText=getFormattedNumber(num);
@@ -21,7 +21,7 @@ function getFormattedNumber(num){
     var value = n.toLocaleString("en");
     return value;
 }
-function reverseNumberFormatted(num){
+function reverseNumberFormat(num){
     return Number(num.replace(/,/g,''));
 }
 var operator =document.getElementsByClassName("operator");
@@ -37,7 +37,24 @@ operator[i].addEventListener('click',function(){
             output= output.substr(0,output.length-1);
         }
     }
-
+else{
+    var output=getOutput();
+    var history=getHistory();
+    if (output!=""){
+        output=reverseNumberFormatted(output);
+        history=history+output;
+        if(this.id=="="){
+            var result=eval(history);
+            printOutput(result);
+            printHistory("");
+        }
+        else{
+            history=history+this.id;
+            printHistory(history);
+            printOutput("");
+        }
+    }
+}
 
 });
 var n = document.getElementsByClassName("operator");
